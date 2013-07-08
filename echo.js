@@ -1,5 +1,9 @@
 #!/usr/local/bin/node
 
+// Node.js tutorial sample
+//
+// tcp/ip socket echo server
+
 var net = require('net');
 var sockets = [];
 var s = net.Server(function(socket) {
@@ -17,6 +21,7 @@ var s = net.Server(function(socket) {
     sockets.splice(i, 1);
   });
 
+  // terminating listening process triggers error event; must handle
   socket.on('error', function(ex) {
     console.log('ignoring exception: ' + ex);
   });
